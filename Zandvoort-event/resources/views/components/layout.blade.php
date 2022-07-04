@@ -47,16 +47,16 @@
                 </h2>
             </header>
 
-            <form method="POST" action="/" enctype="multipart/form-data">
+            <form method="POST" action="/entrys" enctype="multipart/form-data">
 
                 @csrf {{-- prevents cross site scripting --}}
 
                 <div class="mb-6">
-                    <label for="naam" class="inline-block text-lg mb-2">Naam</label>
-                    <input type="text" class="border border-gray-200 rounded p-2 w-full" name="naam"
-                        value="{{ old('naam') }}" />
+                    <label for="name" class="inline-block text-lg mb-2">Naam</label>
+                    <input type="text" class="border border-gray-200 rounded p-2 w-full" name="name"
+                        value="{{ old('name') }}" />
 
-                    @error('naam')
+                    @error('name')
                         <p class="text-red-500 text-xs mt-1">{{ $message }}</p>
                     @enderror
                 </div>
@@ -72,13 +72,11 @@
                 </div>
 
                 <div class="mb-6">
-                    <label for="tags" class="inline-block text-lg mb-2">
-                        Kenteken
-                    </label>
-                    <input type="text" class="border border-gray-200 rounded p-2 w-full" name="kenteken"
-                        value="{{ old('kenteken') }}" placeholder="Voorbeeld: XX-000-X" />
+                    <label for="numberplate" class="inline-block text-lg mb-2">Kenteken</label>
+                    <input type="text" class="border border-gray-200 rounded p-2 w-full" name="numberplate"
+                        value="{{ old('numberplate') }}" placeholder="Voorbeeld: XX-000-X" />
 
-                    @error('tags')
+                    @error('numberplate')
                         <p class="text-red-500 text-xs mt-1">{{ $message }}</p>
                     @enderror
                 </div>
@@ -104,7 +102,7 @@
     </footer>
 
     <x-flash-message />
-    
+
 </body>
 
 </html>
