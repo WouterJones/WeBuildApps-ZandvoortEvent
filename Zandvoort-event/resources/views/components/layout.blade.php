@@ -104,6 +104,7 @@
     </footer>
 
     <x-flash-message />
+    
 </body>
 
 </html>
