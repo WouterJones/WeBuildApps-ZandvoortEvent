@@ -1,5 +1,7 @@
 <?php
 
+use App\Mail\RegistrationSuccesMail;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\EntryController;
 
@@ -9,4 +11,5 @@ Route::get('/', function () {
 });
 
 // Store Entry Data
-Route::post('/entrys', [EntryController::class, 'store']);
+Route::post('/entries', [EntryController::class, 'store']);
+

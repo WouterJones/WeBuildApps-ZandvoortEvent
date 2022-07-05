@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\RegistrationSuccesMail;
 use App\Models\Entry;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
+use Illuminate\Support\Facades\Mail;
 
 class EntryController extends Controller
 {
@@ -19,6 +21,17 @@ class EntryController extends Controller
         $formFields['user_id'] = auth()->id();
 
         Entry::create($formFields);
+
+        //
+        $email = $request->get('email');
+
+        $data = ([
+            'name' => $request->get('name'),
+            'email' => $request->get('email'),
+            'numberplate' => $request->get('numberplate')
+        ]);
+
+        Mail::to($email)->send(new RegistrationSuccesMail($data));
 
         return redirect('/')->with('message', 'Registratie gelukt!');
     }
