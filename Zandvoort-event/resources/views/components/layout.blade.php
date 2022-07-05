@@ -8,7 +8,7 @@
     <link rel="icon" href="images/favicon.ico" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
         integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" /> 
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="//unpkg.com/alpinejs" defer></script>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -34,62 +34,24 @@
                 style="background-image: url('images/circuit-whole.png')"></div>
 
             <div class="z-10">
-                <a href="https://www.circuitzandvoort.nl/"><img class="inline w-1/2 pt-10" src="{{ asset('images/CZ-Logo-Main.png') }}"
-                        alt="" class="logo" /></a>
+                <a href="https://www.circuitzandvoort.nl/"><img class="inline w-1/2 pt-10"
+                        src="{{ asset('images/CZ-Logo-Main.png') }}" alt="" class="logo" /></a>
             </div>
         </section>
 
-        <x-card class="p-10 max-w-lg mx-auto mt-10">
-            <header class="text-center">
-                <p class="mb-4">Registreer je <b>snel</b> voor de</p>
-                <h2 class="text-2xl font-bold uppercase mb-1">
-                    Zandvoort Personenauto Race!
-                </h2>
-            </header>
+        <div class="grid grid-rows-3 grid-flow-col gap-4 justify-center">
 
-            <form method="POST" action="/entrys" enctype="multipart/form-data">
+            <div class="row-span-3 ...">
+                @include('partials._registration-form') 
+            </div>
+            <div class="col-span-2 ...">
+                @include('partials._counter')
+            </div>
+            <div class="row-span-2 col-span-2 ...">
+                @include('partials._weather')
+            </div>
 
-                @csrf {{-- prevents cross site scripting --}}
-
-                <div class="mb-6">
-                    <label for="name" class="inline-block text-lg mb-2">Naam</label>
-                    <input type="text" class="border border-gray-200 rounded p-2 w-full" name="name"
-                        value="{{ old('name') }}" />
-
-                    @error('name')
-                        <p class="text-red-500 text-xs mt-1">{{ $message }}</p>
-                    @enderror
-                </div>
-
-                <div class="mb-6">
-                    <label for="email" class="inline-block text-lg mb-2">Email adres</label>
-                    <input type="text" class="border border-gray-200 rounded p-2 w-full" name="email"
-                        value="{{ old('email') }}" />
-
-                    @error('email')
-                        <p class="text-red-500 text-xs mt-1">{{ $message }}</p>
-                    @enderror
-                </div>
-
-                <div class="mb-6">
-                    <label for="numberplate" class="inline-block text-lg mb-2">Kenteken</label>
-                    <input type="text" class="border border-gray-200 rounded p-2 w-full" name="numberplate"
-                        value="{{ old('numberplate') }}" placeholder="Voorbeeld: XX-000-X" />
-
-                    @error('numberplate')
-                        <p class="text-red-500 text-xs mt-1">{{ $message }}</p>
-                    @enderror
-                </div>
-
-                <div class="mb-6">
-                    <button class="bg-laravel text-white rounded py-2 px-4 hover:bg-black">
-                        Submit!
-                    </button>
-                </div>
-            </form>
-        </x-card>
-
-        @include('partials._counter') 
+        </div>
 
         <section class="relative h-80 flex justify-center align-center text-center space-y-4 mb-4 pt-10">
             <div class="absolute left-0 w-full h-full opacity-1 bg-no-repeat bg-center"
@@ -99,7 +61,7 @@
     </main>
 
     <footer
-        class="p-4 left-0 w-full flex items-center justify-start font-bold bg-laravel text-white h-24 mt-24 opacity-50 md:justify-center">
+        class="p-4 left-0 w-full flex items-center justify-start font-bold bg-laravel text-white h-24 mt-24 opacity-80 md:justify-center">
         <p class="ml-2">Copyright &copy; 2022, All Rights reserved</p>
     </footer>
 
