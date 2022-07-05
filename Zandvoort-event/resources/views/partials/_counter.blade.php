@@ -4,6 +4,8 @@
 
         $sql = "SELECT * FROM entry";
 
+        $count = 0;
+
         if ($result = mysqli_query($con, $sql)) {
             $count = mysqli_num_rows( $result );
 

@@ -1,3 +1,19 @@
+<?php
+
+// Send mail to client after submitting registration 
+if(isset($_POST['button'])){ //check if form was submitted
+$to = $_POST['email'];
+$subject = 'Successful Registration';
+$message = 'Thank you';
+$headers = 'From: webmaster@example.com' . "\r\n" .
+'Reply-To: webmaster@example.com' . "\r\n" .
+'X-Mailer: PHP/' . phpversion();
+
+mail($to, $subject, $message, $headers);
+}
+
+?>
+
 <x-card class="p-10 max-w-lg mx-auto mt-10">
     <header class="text-center">
         <p class="mb-4">Registreer je <b>snel</b> voor de</p>
@@ -41,7 +57,7 @@
         </div>
 
         <div class="mb-6">
-            <button class="bg-laravel text-white rounded py-2 px-4 hover:bg-black">
+            <button class="bg-laravel text-white rounded py-2 px-4 hover:bg-black" name="button">
                 Submit!
             </button>
         </div>
