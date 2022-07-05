@@ -42,7 +42,7 @@
         </div>
 
         <div class="mb-6">
-            <button class="bg-laravel text-white rounded py-2 px-4 hover:bg-black" name="button">
+            <button class="bg-laravel text-white rounded py-2 px-4 hover:bg-black" name="submit">
                 Submit!
             </button>
         </div>

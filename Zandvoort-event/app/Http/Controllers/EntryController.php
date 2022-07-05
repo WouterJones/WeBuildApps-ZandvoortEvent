@@ -15,7 +15,7 @@ class EntryController extends Controller
         $formFields = $request->validate([
             'name' => 'required',
             'email' => ['required', 'email'],
-            'numberplate' => 'required'
+            'numberplate' => ['required', 'regex:/^[A-Z || 0-9]{1,3}[-]{1}[A-Z || 0-9]{1,3}[-]{1}[A-Z || 0-9]{1,3}$/']
         ]);
 
         $formFields['user_id'] = auth()->id();
