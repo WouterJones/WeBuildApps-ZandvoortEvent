@@ -1,4 +1,4 @@
-<x-card class="p-10 max-w-sm mt-10">
+<x-card class="p-10 max-w-sm mx-auto mt-10">
     <?php
         $con = mysqli_connect("localhost", "testuser","pwU1234","zandvoort_persauto_race");
 

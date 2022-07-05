@@ -39,15 +39,15 @@
             </div>
         </section>
 
-        <div class="grid grid-rows-3 grid-flow-col gap-4 justify-center">
+        <div class="flex flex-col justify-center md:grid grid-rows-3 grid-flow-col gap-4">
 
-            <div class="row-span-3 ...">
+            <div class="row-span-3 ">
                 @include('partials._registration-form') 
             </div>
-            <div class="col-span-2 ...">
+            <div class="col-span-2 ">
                 @include('partials._counter')
             </div>
-            <div class="row-span-2 col-span-2 ...">
+            <div class="row-span-2 col-span-2 ">
                 @include('partials._weather')
             </div>
 
