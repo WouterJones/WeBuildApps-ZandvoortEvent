@@ -1,3 +1,4 @@
+{{-- Entries counter --}}
 <x-card class="p-10 max-w-lg mx-auto mt-10">
     <?php
         $con = mysqli_connect("localhost", "testuser","pwU1234","zandvoort_persauto_race");

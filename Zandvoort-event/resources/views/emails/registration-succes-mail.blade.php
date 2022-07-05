@@ -1,3 +1,4 @@
+{{-- Layout for mail: successful registration --}}
 <x-card class="p-10 max-w-lg mx-auto mt-10">
     <h2>Hey! {{ $data['name'] }}, Je registratie is gelukt! Dank je wel voor je deelname!</h2>
 

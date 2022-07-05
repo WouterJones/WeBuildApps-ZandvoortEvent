@@ -1,3 +1,4 @@
+{{-- Registration form --}}
 <x-card class="p-10 max-w-lg mx-auto mt-10">
     <header class="text-center">
         <p class="mb-4">Registreer je <b>snel</b> voor de</p>

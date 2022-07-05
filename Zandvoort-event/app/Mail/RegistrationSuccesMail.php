@@ -7,6 +7,7 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 
+// Local mail server via Mailtrap. See .ENV file for setting information
 class RegistrationSuccesMail extends Mailable
 {
     use Queueable, SerializesModels;

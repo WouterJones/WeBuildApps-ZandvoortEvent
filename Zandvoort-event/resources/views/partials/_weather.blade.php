@@ -1,3 +1,4 @@
+{{-- Weather data --}}
 <x-card class="p-4 max-w-lg mx-auto">
     <p>Het weer op dit moment: </p>
     <iframe frameborder="0" scrolling="no" class="weerplazaWidget" 

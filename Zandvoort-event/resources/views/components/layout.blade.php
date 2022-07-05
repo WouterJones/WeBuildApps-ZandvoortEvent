@@ -28,7 +28,7 @@
 <body>
 
     <main>
-
+        {{-- Header --}}
         <section class="relative h-80 flex justify-center align-center text-center space-y-4 mb-4">
             <div class="absolute top-0 left-0 w-full h-full opacity-1 bg-cover bg-center"
                 style="background-image: url('images/circuit-whole.png')"></div>
@@ -39,6 +39,7 @@
             </div>
         </section>
 
+        {{-- Page content --}}
         <div class="flex flex-col justify-center md:grid grid-rows-3 grid-flow-col gap-4">
 
             <div class="row-span-3 ">
@@ -60,6 +61,7 @@
 
     </main>
 
+    {{-- Footer --}}
     <footer
         class="p-4 left-0 w-full flex items-center justify-start font-bold bg-laravel text-white h-24 mt-24 opacity-80 md:justify-center">
         <p class="ml-2">Copyright &copy; 2022, All Rights reserved</p>

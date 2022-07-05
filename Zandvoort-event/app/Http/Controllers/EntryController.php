@@ -22,7 +22,7 @@ class EntryController extends Controller
 
         Entry::create($formFields);
 
-        //
+        // Sending confirmation mail after storing data
         $email = $request->get('email');
 
         $data = ([
@@ -33,6 +33,7 @@ class EntryController extends Controller
 
         Mail::to($email)->send(new RegistrationSuccesMail($data));
 
+        // flash message showing at top of screen
         return redirect('/')->with('message', 'Registratie gelukt!');
     }
 }

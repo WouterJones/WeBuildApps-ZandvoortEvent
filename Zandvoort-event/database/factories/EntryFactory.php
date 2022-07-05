@@ -4,6 +4,8 @@ namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
 
+// Creates dummy data for mySQL database
+
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Register>
  */
