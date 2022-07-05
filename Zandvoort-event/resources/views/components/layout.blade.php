@@ -41,7 +41,7 @@
 
         <x-card class="p-10 max-w-lg mx-auto mt-10">
             <header class="text-center">
-                <p class="mb-4">Registreer je snel voor de</p>
+                <p class="mb-4">Registreer je <b>snel</b> voor de</p>
                 <h2 class="text-2xl font-bold uppercase mb-1">
                     Zandvoort Personenauto Race!
                 </h2>
@@ -88,6 +88,8 @@
                 </div>
             </form>
         </x-card>
+
+        @include('partials._counter') 
 
         <section class="relative h-80 flex justify-center align-center text-center space-y-4 mb-4 pt-10">
             <div class="absolute left-0 w-full h-full opacity-1 bg-no-repeat bg-center"

@@ -8,8 +8,5 @@ Route::get('/', function () {
     return view('components.layout');
 });
 
-// get all Entrys
-Route::get('/', [EntryController::class, '_counter']);
-
 // Store Entry Data
 Route::post('/entrys', [EntryController::class, 'store']);
