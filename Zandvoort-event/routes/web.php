@@ -8,10 +8,11 @@ use App\Http\Controllers\RdwController;
 
 // Routes 
 
-// Homepage view
-Route::get('/', function () {
-    return view('components.layout');
-});
+// Landing Page Registration From View
+Route::get('/', [EntryController::class, 'viewRegForm']);
+
+// Landing Page Winnerslist View
+Route::get('/winners', [EntryController::class, 'viewWinners']);
 
 // Store Entry Data
 Route::post('/entries', [EntryController::class, 'store']);

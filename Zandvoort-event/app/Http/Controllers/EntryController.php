@@ -10,6 +10,16 @@ use Illuminate\Support\Facades\Mail;
 
 class EntryController extends Controller
 {
+    // View Registration Form
+    public function viewRegForm(){
+        return view('pageComponents.registration-page');
+    }
+
+    // View Winners List
+    public function viewWinners(){
+        return view('pageComponents.winners-list');
+    }
+
     // Store Entry Data
     public function store(Request $request){
         $formFields = $request->validate([

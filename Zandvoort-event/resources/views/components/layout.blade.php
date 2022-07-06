@@ -39,25 +39,8 @@
             </div>
         </section>
 
-        <p class="text-center pt-6">
-            Wil jij met je eigen auto een op een circuit rijden? dan is dit je kans!! 
-            Schrijf je snel in via onderstaand formulier!
-        </p>
-
         {{-- Page content --}}
-        <div class="flex flex-col justify-center md:grid grid-rows-3 grid-flow-col gap-4">
-
-            <div class="row-span-3 ">
-                @include('partials._registration-form') 
-            </div>
-            <div class="col-span-2 ">
-                @include('partials._counter')
-            </div>
-            <div class="row-span-2 col-span-2 ">
-                @include('partials._weather')
-            </div>
-
-        </div>
+        @yield('content')
 
         <section class="relative h-80 flex justify-center align-center text-center space-y-4 mb-4 pt-10">
             <div class="absolute left-0 w-full h-full opacity-1 bg-no-repeat bg-center"
