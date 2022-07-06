@@ -5,8 +5,6 @@ namespace Database\Factories;
 use App\Http\Controllers\RdwController;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
-// Creates dummy data for mySQL database
-
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Register>
  */
@@ -17,14 +15,17 @@ class EntryFactory extends Factory
      *
      * @return array<string, mixed>
      */
+
+    // Sets up the dummy data for the seeder 
     public function definition()
     {
+
         $getNumPlate = new RdwController;
 
         return [
             'name' => $this->faker->name(),
             'email' => $this->faker->companyEmail(),
-            'numberplate' => json_encode($getNumPlate->fetchNumberPlate())
+            'numberplate' => str_replace('"','',json_encode($getNumPlate->fetchNumberPlate()))
         ];
     }
 }

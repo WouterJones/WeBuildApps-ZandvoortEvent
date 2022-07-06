@@ -15,6 +15,7 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
+        // Voorziet de database van dummy data
         Entry::factory(10)->create();
     }
 }

@@ -55,6 +55,7 @@
         <p class="ml-2">Copyright &copy; 2022, All Rights reserved</p>
     </footer>
 
+    {{-- Initialisation of the flash message --}}
     <x-flash-message />
 
 </body>

@@ -1,15 +1,8 @@
 @extends('components.layout')
 
 @section('content')
-    <x-card class="p-10 mx-auto mt-10">
-
-        {{-- <div>
-            <a href="/">
-                <button class="bg-laravel text-white rounded py-2 px-4 hover:bg-black" name="back">
-                    Terug naar registratie!
-                </button>
-            </a>
-        </div> --}}
+    {{-- Winnaars lijst component --}}
+    <x-card class="max-w-fit mx-auto mt-10 md:p-10 max-w-4xl mx-auto mt-10">
 
         <div class="text-center pt-6">
             <h2 class="text-2xl font-bold uppercase mb-1">Winnaars: </h2>
@@ -21,6 +14,7 @@
             </a>
         </div>
 
+        {{-- Dynamic table loading on each entry--}}
         <div>
             <table class="min-w-full">
                 <thead class="border-b">
@@ -39,22 +33,32 @@
                         </th>
                     </tr>
                 </thead>
+
                 <tbody>
-                    <tr class="border-b">
-                        <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                            Wouter
-                        </td>
-                        <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                            Peugeot
-                        </td>
-                        <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                            Blauw
-                        </td>
-                        <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                            0-BX-558
-                        </td>
+                @unless(count($winners) == 0)                    
+                        @foreach ($winners as $winner) {{-- Hij loopt op dit moment alleen maar over alle entries in de database --}}
+                        <tr class="border-b">
+                            <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                                {{$winner->name}}
+                            </td>
+                            <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                                -
+                            </td>
+                            <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                                -
+                            </td>
+                            <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                                {{$winner->numberplate}}
+                            </td>
+                        </tr>    
+                        @endforeach
+                    @else
+                    <tr>
+                        <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">Geen winnaars gevonden..</td>
                     </tr>
+                    @endunless
                 </tbody>
+
             </table>
         </div>
     </x-card>

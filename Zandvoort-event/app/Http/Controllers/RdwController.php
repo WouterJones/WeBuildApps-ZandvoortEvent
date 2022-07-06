@@ -36,4 +36,6 @@ class RdwController extends Controller
 
         return $select;
     }
+
+    // Hier -> zou de volgende functie komen om de data behorende tot kentekenplaten op te halen
 }

@@ -17,7 +17,9 @@ class EntryController extends Controller
 
     // View Winners List
     public function viewWinners(){
-        return view('pageComponents.winners-list');
+        return view('pageComponents.winners-list', [
+            'winners' => Entry::all()
+        ]);
     }
 
     // Store Entry Data
@@ -25,10 +27,8 @@ class EntryController extends Controller
         $formFields = $request->validate([
             'name' => 'required',
             'email' => ['required', 'email'],
-            'numberplate' => ['required', 'regex:/^[A-Z || 0-9]{1,3}[-]{1}[A-Z || 0-9]{1,3}[-]{1}[A-Z || 0-9]{1,3}$/']
+            'numberplate' => ['required', 'regex:/^[A-Z || 0-9]{1,3}[A-Z || 0-9]{1,3}[A-Z || 0-9]{1,3}$/']
         ]);
-
-        $formFields['user_id'] = auth()->id();
 
         Entry::create($formFields);
 

@@ -18,5 +18,5 @@ Route::get('/winners', [EntryController::class, 'viewWinners']);
 Route::post('/entries', [EntryController::class, 'store']);
 
 // RDW data check
-Route::get('/data',[RdwController::class, 'fetchNumberPlate']);
+// Route::get('/data',[RdwController::class, 'fetchNumberPlate']);
 
