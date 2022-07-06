@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Http\Controllers\RdwController;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 // Creates dummy data for mySQL database
@@ -18,10 +19,12 @@ class EntryFactory extends Factory
      */
     public function definition()
     {
+        $getNumPlate = new RdwController;
+
         return [
             'name' => $this->faker->name(),
             'email' => $this->faker->companyEmail(),
-            'numberplate' =>$this->faker->regexify('[0-9]{3}-[A-Z]{2}-[0-9]{1}')
+            'numberplate' => json_encode($getNumPlate->fetchNumberPlate())
         ];
     }
 }
